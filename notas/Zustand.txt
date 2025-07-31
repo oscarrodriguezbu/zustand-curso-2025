@@ -1,0 +1,113 @@
+Zustand
+
+- Es una alternativa a Redux, pero es muy similar
+- Funciona con redux devtools
+- Los stores se consumen como un hook y se recomienda colocarles nombres de hook use...
+
+
+SECCIONES DEL CURSO:
+----------------------------------------------
+1: Bases de Zustand
+Instalaciones
+
+Configuraciones
+
+Propiedades computadas
+
+Objetos anidados
+
+Actualizaciones de estado
+
+Configuraciones con TypeScript
+
+useShallow
+
+NOTAS:
+- Me recuerda mucho los servicios de angular
+- Se pueden crear varios store
+- Tener varios store tiene sus ventajas pero complica la interacción entre ellos, sobre todo con el tipado
+- No es necesario ir al main y envolverlo como en redux
+- no se recomienda desestructurar el store cuando se llame en el componente porque entonces afecta la independencia de los renderizados de los componentes
+- useShallow se va a encargar de verificar si algo cambió para renderizar o no,muy util para trabajar con objetos anidades que vienen desestructurados o si algo
+	retorna algo sin cambios
+- Mejoras del uso y manejo de zustand con set, get que recomiendan para solventar varios issues
+- 
+
+----------------------------------------------
+2: Middlewares de Zustand
+Persist Middlewares
+
+createJSONStore
+
+Guardar automáticamente en session storage
+
+Guardar automáticamente en Firebase
+
+Crear un storage personalizado
+
+Diferentes interfaces de Zustand
+
+Custom Middleware
+
+Redux DevTools y acciones
+
+Notas:
+- Los tipados personalizados para trabajar con zustank pueden llegar a ser un poco complejos
+- persist( //es un middleware, guarda en localstorage
+- El session storage se limpia solo cuando se cierra el navegador web
+- Se puede configurar para guardar en el session en lugar del local storage
+- si una peticion se hace muchas veces cuando se teclea cualquier cosa, se le conoce como peticion de carrera
+    si se hacen 10 peticiones no quiere decir que la primera llegara primero ni la ultima de ultimo, se puede
+    solucionar parcialmente con un debounce, pero axios lo maneja mucho mejor cancelando las peticiones anteriores a la ultima
+-   devtools(  //es un middleware para ver herramientos del redux devtools del navegador
+- Lo normal es tener 2,3 o  middlewares en el store
+- 
+
+----------------------------------------------
+3. Drag & Drop Inmutabilidad con Immer
+Drag & Drop (sin dependencias)
+
+Uso de Store con objetos anidados
+
+Middlewares
+
+Funciones adicionales
+
+UUID
+
+Mutaciones vs Clonaciones
+
+Tipado en TypeScript
+
+Entre otras cosas
+
+
+
+Notas:
+- Immer es un paquete que se encarga de ayudar a mutar un estado y emitir un nuevo estado
+- Para el drag and drop no se instala paquete adicional, se hace con lo que hay
+- Paquete Classnames: Es para validar dentro de las clases de la sección HTML
+- El immer se puede usar de dos formas, del zustand como middleware o como paquete de terceros
+- Es preferible usar el que ya viene con zustank porque no hay que instalar nada
+- El middleware immer se coloca en el useStore donde esta el devtools y persist, se debe colocar lo mas cerca del store posible para sortear pruebas con los tipados
+- 
+
+----------------------------------------------
+4. Zustand Slices
+
+
+
+Notas:
+
+----------------------------------------------
+5. Peticiones HTTP Zustand fuera de React
+
+
+
+Notas:
+
+----------------------------------------------
+
+
+
+----------------------------------------------
