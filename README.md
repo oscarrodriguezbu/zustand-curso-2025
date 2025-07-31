@@ -2,7 +2,7 @@
 
 Este es un cascarón de proyecto, siéntete libre de usarlo para tus proyectos.
 
-<img src="https://github.com/oscarrodriguezbu/zustand-mini-curso/blob/main/public/screenshot.png?raw=true" alt="Dashboard Screenshot">
+<img src="https://github.com/oscarrodriguezbu/zustand-curso-2025/blob/main/public/screenshot.png?raw=true" alt="Dashboard Screenshot">
 
 
 
