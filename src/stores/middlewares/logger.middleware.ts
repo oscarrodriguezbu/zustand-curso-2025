@@ -14,10 +14,8 @@ type LoggerImpl = <T extends unknown>(
   name?: string
 ) => StateCreator<T, [], []>
 
-
-
-
-const loggerImpl: LoggerImpl = (f, name) => (set, get, store) => {  
+const loggerImpl: LoggerImpl = (f, name) => (set, get, store) => {
+  
   const loggedSet: typeof set = (...a) => {
     set(...a)
     console.log(...(name ? [`${name}:`] : []), get())
