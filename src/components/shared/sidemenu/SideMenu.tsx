@@ -5,7 +5,6 @@ import './SideMenu.css';
 import { SideMenuItem } from './SideMenuItem';
 import { useAuthStore } from '../../../stores';
 
-
 interface MenuItem {
   title: string;
   subTitle: string;
@@ -21,13 +20,9 @@ const menuItems: MenuItem[] = [
   { title: 'Boda', subTitle: 'Invitados a la boda', href: '/dashboard/wedding-invitation', Icon: IoHeartOutline },
 ];
 
-
-
-
 export const SideMenu = () => {
-
-  const logoutUser = useAuthStore( state => state.logoutUser );
-  const userName = useAuthStore( state => state.user?.fullName || 'No user' );
+  const logoutUser = useAuthStore(state => state.logoutUser);
+  const userName = useAuthStore(state => state.user?.fullName || 'No user');
 
   return (
     <div id="menu" className="bg-gray-900 min-h-screen z-10 text-slate-300 w-80 left-0 overflow-y-scroll">
@@ -41,32 +36,29 @@ export const SideMenu = () => {
         <p className="text-slate-500 text-sm">Manejador de estados simple pero poderoso.</p>
       </div>
 
-      {/*  Profile */ }
+      {/*  Profile */}
       <div id="profile" className="px-6 py-10">
         <p className="text-slate-500">Bienvenido,</p>
         <a href="#" className="inline-flex space-x-2 items-center">
           <span>
-            <img className="rounded-full w-8 h-8" src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=128&q=80" alt="" />
+            <img className="rounded-full w-8 h-8" src="https://res.cloudinary.com/dgmznkfua/image/upload/v1667962678/p9cq6mw2h6uy9r0cg7gy.jpg" alt="" />
           </span>
           <span className="text-sm md:text-base font-bold">
-            { userName }
+            {userName}
           </span>
         </a>
       </div>
 
-      {/* Menu Items */ }
+      {/* Menu Items */}
       <nav id="nav" className="w-full px-6">
-
         {
-          menuItems.map( item =>(
+          menuItems.map(item => (
             <SideMenuItem key={item.href} {...item} />
-          ) )
+          ))
         }
 
-
-
         {/* Logout */}
-        <a onClick={ logoutUser } className="mt-10">
+        <a onClick={logoutUser} className="mt-10">
           <div>
             <IoLogOutOutline />
           </div>
